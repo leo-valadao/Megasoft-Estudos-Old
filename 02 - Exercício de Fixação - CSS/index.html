@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Exercício 01 - Fixação Sobre HTML</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <header>
+            <a href="https://www.megasoft.com.br/">
+                <img src="megasoft-logo.jpg" alt="Logo da Megasoft" style="width: 50px; height: 50px;"/>
+            </a>
+
+            <h1>Cadastro de Pessoa:</h1>
+        </header>
+
+        <main>
+            <div id="divFormulario">
+                <h3>Formulário:</h3>
+                <p>Preencha os dados da pessoa e verifique-os antes de salvar.</p>
+
+                <form action="" id="formularioDaPesoa">
+                    <div class="malha">
+                        <div id="divCodigo" class="divInputsFormularios">
+                            <label for="codigo" id="labelCodigo">Código: <span class="obrigatorio">*</span></label>
+                            <input type="number" id="codigo" placeholder="Digite o código..."/>
+                        </div>
+                
+                        <div id="divNome" class="divInputsFormularios">
+                            <label for="nome" id="labelNome">Nome: <span class="obrigatorio">*</span></label>
+                            <input type="text" id="nome" placeholder="Digite o nome..."/>
+                        </div>
+
+                        <div id="divDataDeNascimento"  class="divInputsFormularios">
+                            <label for="dataDeNascimento" id="labelDataDeNascimento">Data de Nascimento: <span class="obrigatorio">*</span></label>
+                            <input type="date" id="dataDeNascimento" placeholder="Digite a data de nascimento...">
+                        </div>
+
+                        <div id="divCPF"  class="divInputsFormularios">
+                            <label for="cpf" id="labelCPF">CPF: <span class="obrigatorio">*</span></label>
+                            <input type="number" id="cpf" placeholder="Digite o CPF..."/>
+                        </div>
+
+                        <div id="divSexo"  class="divInputsFormularios">
+                            <label for="sexo" id="labelSexo">Sexo:</label>
+                            <div id="divOpcoesDeSexo">
+                                <input type="radio" name="sexo" value="masculino">Masculino</input>
+                                <input type="radio" name="sexo" value="feminino">Feminino</input>
+                            </div>
+                        </div>
+
+                        <div id="divTipoDePessoa"  class="divInputsFormularios">
+                            <label for="tipoDePessoa" id="labelTipoDePessoa">Tipo de Pessoa: <span class="obrigatorio">*</span></label>
+                            <select name="tipoDePessoa" id="selectTipoDePessoa">
+                                <option value="pessoaFisica">Pessoa Física</option>
+                                <option value="pessoaJuridica">Pessoa Jurídica</option>
+                                <option value="especial">Especial</option>
+                                <option value="outros">Outros</option>
+                            </select>
+                        </div>
+
+                        <div id="divAltura"  class="divInputsFormularios">
+                            <label for="altura" id="labelAltura">Altura:</label>
+                            <input type="number" id="altura" placeholder="Digite a altura..."/>
+                        </div>
+
+                        <div id="divPeso"  class="divInputsFormularios">
+                            <label for="peso" id="labelPeso">Peso:</label>
+                            <input type="number" id="peso" placeholder="Digite o peso..."/>
+                        </div>
+
+                        
+
+                        <div id="divPortadorDeNecessidadesEspeciais"  class="divCheckbox">
+                            <input type="checkbox" id="portadorDeNecessidadesEspeciais">
+                            <label for="portadorDeNecessidadesEspeciais" id="labelPortadorDeNecessidadesEspeciais">Portador de Necessidades Especiais?</label>
+                        </div>
+                    </div>
+
+                    <button id="buttonSalvar" class="linhaCompleta"><b>Salvar</b></button>
+                </form>
+            </div>
+
+            <div id="divTabela">
+                <h3>Tabela de Pessoas:</h3>
+
+                <table id="tabelaPessoas" class="linhaCompleta tabela" style="margin: 0px;">
+                    <thead>
+                        <tr>
+                            <th>Código</th>
+                            <th>Nome</th>
+                            <th>Data de Nascimento</th>
+                            <th>Sexo</th>
+                            <th>Altura</th>
+                            <th>Peso</th>
+                            <th>CPF</th>
+                            <th>Pessoa de Necessidades Especiais</th>
+                            <th>Tipo de Pessoa</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Leonardo</td>
+                            <td>03/04/1997</td>
+                            <td>Masculino</td>
+                            <td>1.82 m</td>
+                            <td>80 Kg</td>
+                            <td>123.456.789-01</td>
+                            <td>Não</td>
+                            <td>Pessoa Jurídica</td>
+                        </tr>
+
+                        <tr>
+                            <td>2</td>
+                            <td>João</td>
+                            <td>02/03/1996</td>
+                            <td>Masculino</td>
+                            <td>1.90 m</td>
+                            <td>90 Kg</td>
+                            <td>123.456.789-02</td>
+                            <td>Não</td>
+                            <td>Pessoa Física</td>
+                        </tr>
+
+                        <tr>
+                            <td>3</td>
+                            <td>Maria</td>
+                            <td>01/02/1995</td>
+                            <td>Feminino</td>
+                            <td>1.62 m</td>
+                            <td>70 Kg</td>
+                            <td>123.456.789-03</td>
+                            <td>Sim</td>
+                            <td>Especial</td>
+                        </tr>
+
+                        <tr>
+                            <td>4</td>
+                            <td>Antônio</td>
+                            <td>10/01/1994</td>
+                            <td>Masculino</td>
+                            <td>1.75 m</td>
+                            <td>92 Kg</td>
+                            <td>123.456.789-04</td>
+                            <td>Sim</td>
+                            <td>Outros</td>
+                        </tr>
+                        
+                        <tr>
+                            <td>5</td>
+                            <td>Carla</td>
+                            <td>11/12/1993</td>
+                            <td>Feminino</td>
+                            <td>1.70 m</td>
+                            <td>80 Kg</td>
+                            <td>123.456.789-05</td>
+                            <td>Não</td>
+                            <td>Pessoa Física</td>
+                        </tr>
+                    </tbody>
+
+                    <tfoot>
+                        <tr>
+                            <td><b>Total de pessoas cadastras:</b></td>
+                            <td>5</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+
+            <div id="divListaAtividades">
+                <h3>Lista de Atividades:</h3>
+
+                <ol id="listaAtividades">
+                    <li>Atualizar sistema</li>
+                    <li>Corrigir bugs</li>
+                    <li>Ligar banco de dados</li>
+                </ol>
+            </div>
+
+            <div id="divListaCompras">
+                <h3>Lista de Compras:</h3>
+
+                <ul id="listaCompras">
+                    <li>SDD</li>
+                    <li>HDD</li>
+                    <li>Monitor</li>
+                </ul>
+            </div>
+        </main>
+
+        <footer>
+            <pre>
+        © Leonardo Valadão™ - Todos os direitos reservados.
+        Quaisquer dúvidas ligar para (11) 11111-1111.
+            </pre>
+        </footer>
+    </body>
+</html>

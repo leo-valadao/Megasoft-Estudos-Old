@@ -1,0 +1,54 @@
+* {
+    font-family: "Segoe UI",Arial,sans-serif;
+}
+
+.malha {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: 50px 50px 50px;
+}
+
+.obrigatorio {
+    color: red;
+}
+
+.alinharVertical {
+    align-self: center;
+}
+
+.linhaCompleta {
+    width: 100%;
+}
+
+button {
+    padding: 10px;
+    font-size: large;
+}
+
+.divInputsFormularios {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    margin: 10px;
+    gap: 0 5px 0 5;
+}
+
+.divCheckbox {
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    margin: 10px;
+    gap: 10px;
+}
+
+td, th {
+    border: 1px solid black;
+    padding: 0px;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.tabela {
+    border-spacing: 0px;
+    border-collapse: collapse;
+}
