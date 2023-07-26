@@ -1,0 +1,109 @@
+@font-face { font-family: Nunito; src: url('Nunito-Regular.ttf'); } 
+@font-face { font-family: Nunito; font-weight: bold; src: url('Nunito-Bold.ttf');}
+
+* {
+    font-family: "Nunito";
+}
+
+.horizontal {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+#divListaAtividades, #divListaCompras {
+    width: 100%;
+    justify-content: space-between;
+    justify-items: center;
+    text-align: center;
+}
+
+.obrigatorio {
+    color: red;
+}
+
+.alinharVertical {
+    align-self: center;
+}
+
+.linhaCompleta {
+    width: 100%;
+}
+
+button {
+    padding: 10px;
+    font-size: large;
+}
+
+.divInputsFormularios {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    margin: 10px;
+    gap: 0 5px 0 5;
+}
+
+.divCheckbox {
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    margin: 10px;
+    gap: 10px;
+}
+
+td, th {
+    border: 1px solid black;
+    text-align: center;
+}
+
+.tabela {
+    border-collapse: collapse;
+}
+
+@media screen and (min-width: 1360px) {
+    .malha {
+        display: grid;
+        grid-template-columns: 25% 25% 25% 25%;
+        grid-template-rows: 50px 50px 50px;
+    }
+
+    #divTabela {
+        display: block;
+    }
+
+    #avisoDeTelaPequena {
+        display: none;
+    }
+}
+
+@media screen and (min-width:799px) and (max-width: 1360px) {
+    .malha {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 50px 50px 50px;
+    }    
+
+    #divTabela {
+        display: block;
+    }
+
+    #avisoDeTelaPequena {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 799px) {
+    .malha {
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 50px;
+    }    
+
+    #divTabela {
+        display: none;
+    }
+
+    #avisoDeTelaPequena {
+        display: unset;
+    }
+}
