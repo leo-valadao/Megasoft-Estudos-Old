@@ -1,0 +1,80 @@
+@font-face { font-family: Nunito; src: url('../fonts/Nunito-Regular.ttf'); } 
+@font-face { font-family: Nunito; font-weight: bold; src: url('../fonts/Nunito-Bold.ttf');}
+
+* {
+    font-family: "Nunito";
+}
+
+body {
+    min-height: 100vh;
+    min-width: 100vw;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    min-width: 100vw;
+}
+
+footer {
+    margin-top: auto;
+  }
+
+button {
+    padding: 10px;
+    font-size: large;
+}
+
+table {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+td, th, tr {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.divInputsFormularios {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+}
+
+.divCheckbox {
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+
+    gap: 10px;
+}
+
+.modal-dialog {
+    min-width: 80%;
+    margin: auto;
+}
+
+/* @media screen and (min-width: 1360px) {
+    .malha {
+        display: grid;
+        grid-template-columns: 25% 25% 25% 25%;
+        grid-template-rows: 80px 80px 80px;
+        column-gap: 10px;
+    }
+}
+
+@media screen and (min-width:799px) and (max-width: 1360px) {
+    .malha {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 80px 80px 80px;
+    }    
+}
+
+@media screen and (max-width: 799px) {
+    .malha {
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 80px;
+    }    
+} */

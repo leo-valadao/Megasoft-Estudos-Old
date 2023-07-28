@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Exercício 01 - Fixação Sobre HTML</title>
+        <link rel="icon" type="image/png" sizes="32x32" href="https://www.megasoft.com.br/wp-content/uploads/2019/11/favicon2-32x32.png">
+        
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../css/bootstrap.min.css">
+
+        <script defer src="../js/bootstrap.bundle.min.js"></script>
+        <script defer src="../js/bootstrap.min.js"></script>
+    </head>
+
+    <body>  
+        <header class="header">
+            <nav class="navbar navbar-expand-lg bg-body-tertiary bg-dark sticky-top" data-bs-theme="dark">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="https://www.megasoft.com.br/">
+                        <img src="https://www.megasoft.com.br/wp-content/themes/sd-theme/images/marca-megasoft.svg" alt="Logo da Megasoft"/>
+                    </a>
+
+                    <h1 class="text-light m-0"><b>Gerenciamento de Pessoas:</b></h1>
+
+                    <div id="divNavOpcoes">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+    
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#"><b>Empresa</b></a>
+                                </li>
+                                <li  class="nav-item">
+                                    <a class="nav-link" href="#"><b>Produtos</b></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#"><b>Serviços</b></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <main class="d-flex align-self-center justify-content-center flex-column p-3 px-5 gap-5">
+            <div id="divTabela">
+                <div id="divTituloDaTabelaPessoas" class="d-flex align-items-center justify-content-between">
+                    <h3 class="p-0"><b>Tabela de Pessoas:</b></h3>
+
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalFormulario">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-plus-fill" viewBox="0 0 16 16">
+                            <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                            <path fill-rule="evenodd" d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"/>
+                        </svg>
+                        <b>Adicionar Pessoa</b>
+                    </button>
+                </div>
+
+                <table id="tabelaPessoas" class="table">
+                    <thead>
+                        <tr>
+                            <th>Código</th>
+                            <th>Nome</th>
+                            <th>Data de Nascimento</th>
+                            <th>Sexo</th>
+                            <th>Altura</th>
+                            <th>Peso</th>
+                            <th>CPF</th>
+                            <th>Pessoa de Necessidades Especiais</th>
+                            <th>Tipo de Pessoa</th>
+                            <th>Detalhes</th>
+                        </tr>
+                    </thead>
+
+                    <tbody class="table-group-divider">
+                        <tr>
+                            <td>1</td>
+                            <td>Leonardo</td>
+                            <td>03/04/1997</td>
+                            <td>Masculino</td>
+                            <td>1.82 m</td>
+                            <td>80 Kg</td>
+                            <td>123.456.789-01</td>
+                            <td>Não</td>
+                            <td>Pessoa Jurídica</td>
+                            <td>
+                                <button type="button" class="btn btn-primary" name="detalhes" data-bs-toggle="modal" data-bs-target="#modalCardPessoa">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-lines-fill" viewBox="0 0 16 16">
+                                        <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-5 6s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zM11 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm.5 2.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1h-4zm2 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2zm0 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2z"/>
+                                      </svg>
+                                      <label for="detalhes"><b>Detalhes</b></label>
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>2</td>
+                            <td>João</td>
+                            <td>02/03/1996</td>
+                            <td>Masculino</td>
+                            <td>1.90 m</td>
+                            <td>90 Kg</td>
+                            <td>123.456.789-02</td>
+                            <td>Não</td>
+                            <td>Pessoa Física</td>
+                            <td>
+                                <button type="button" class="btn btn-primary" name="detalhes" data-bs-toggle="modal" data-bs-target="#modalCardPessoa">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-lines-fill" viewBox="0 0 16 16">
+                                        <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-5 6s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zM11 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm.5 2.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1h-4zm2 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2zm0 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2z"/>
+                                      </svg>
+                                      <label for="detalhes"><b>Detalhes</b></label>
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>3</td>
+                            <td>Maria</td>
+                            <td>01/02/1995</td>
+                            <td>Feminino</td>
+                            <td>1.62 m</td>
+                            <td>70 Kg</td>
+                            <td>123.456.789-03</td>
+                            <td>Sim</td>
+                            <td>Especial</td>
+                            <td>
+                                <button type="button" class="btn btn-primary" name="detalhes" data-bs-toggle="modal" data-bs-target="#modalCardPessoa">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-lines-fill" viewBox="0 0 16 16">
+                                        <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-5 6s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zM11 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm.5 2.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1h-4zm2 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2zm0 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2z"/>
+                                      </svg>
+                                      <label for="detalhes"><b>Detalhes</b></label>
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>4</td>
+                            <td>Antônio</td>
+                            <td>10/01/1964</td>
+                            <td>Masculino</td>
+                            <td>1.75 m</td>
+                            <td>92 Kg</td>
+                            <td>123.456.789-04</td>
+                            <td>Sim</td>
+                            <td>Outros</td>
+                            <td>
+                                <button type="button" class="btn btn-primary" name="detalhes" data-bs-toggle="modal" data-bs-target="#modalCardPessoa">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-lines-fill" viewBox="0 0 16 16">
+                                        <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-5 6s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zM11 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm.5 2.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1h-4zm2 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2zm0 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2z"/>
+                                      </svg>
+                                      <label for="detalhes"><b>Detalhes</b></label>
+                                </button>
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td>5</td>
+                            <td>Carla</td>
+                            <td>11/12/1993</td>
+                            <td>Feminino</td>
+                            <td>1.70 m</td>
+                            <td>80 Kg</td>
+                            <td>123.456.789-05</td>
+                            <td>Não</td>
+                            <td>Pessoa Física</td>
+                            <td>
+                                <button type="button" class="btn btn-primary" name="detalhes" data-bs-toggle="modal" data-bs-target="#modalCardPessoa">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-lines-fill" viewBox="0 0 16 16">
+                                        <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-5 6s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zM11 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm.5 2.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1h-4zm2 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2zm0 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2z"/>
+                                      </svg>
+                                      <label for="detalhes"><b>Detalhes</b></label>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+
+                    <tfoot>
+                        <tr>
+                            <td><b>Total de Pessoas Cadastras:</b></td>
+                            <td>5</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+
+            <div id="divCardPessoa" class="d-flex align-self-center justify-content-center">
+                <div class="card" style="width: 40%;">
+                    <img src="../images/person3.jpeg" class="card-img-top" alt="Foto do Perfil da Pessoa">
+                    <div class="card-body">
+                      <h5 class="card-title"><b>Antônio</b></h5>
+                      <p class="card-text">
+                        <h6><b>Código:</b> 1</h6>
+                        <h6><b>Data de Nascimento:</b> 10/01/1964</h6>
+                        <h6><b>Sexo:</b> Masculino</h6>
+                        <h6><b>Altura:</b> 1.75 m</h6>
+                        <h6><b>CPF:</b> 123.456.789-04</h6>
+                        <h6><b>Peso:</b> 92 Kg</h6>
+                        <h6><b>Pessoa de Necessidades Especiais:</b> Sim</h6>
+                        <h6><b>Tipo de Pessoa:</b> Outros</h6>
+                      </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sx-12 col-sm-6">
+                    <h3><b>Lista de Atividades:</b></h3>
+    
+                    <ol id="listaAtividades" class="list-group">
+                        <li class="list-group-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cloud-check" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M10.354 6.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7 8.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
+                                <path d="M4.406 3.342A5.53 5.53 0 0 1 8 2c2.69 0 4.923 2 5.166 4.579C14.758 6.804 16 8.137 16 9.773 16 11.569 14.502 13 12.687 13H3.781C1.708 13 0 11.366 0 9.318c0-1.763 1.266-3.223 2.942-3.593.143-.863.698-1.723 1.464-2.383zm.653.757c-.757.653-1.153 1.44-1.153 2.056v.448l-.445.049C2.064 6.805 1 7.952 1 9.318 1 10.785 2.23 12 3.781 12h8.906C13.98 12 15 10.988 15 9.773c0-1.216-1.02-2.228-2.313-2.228h-.5v-.5C12.188 4.825 10.328 3 8 3a4.53 4.53 0 0 0-2.941 1.1z"/>
+                            </svg>
+                            <label>Atualizar Sistema</label>
+                        </li>
+                        <li class="list-group-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bug" viewBox="0 0 16 16">
+                                <path d="M4.355.522a.5.5 0 0 1 .623.333l.291.956A4.979 4.979 0 0 1 8 1c1.007 0 1.946.298 2.731.811l.29-.956a.5.5 0 1 1 .957.29l-.41 1.352A4.985 4.985 0 0 1 13 6h.5a.5.5 0 0 0 .5-.5V5a.5.5 0 0 1 1 0v.5A1.5 1.5 0 0 1 13.5 7H13v1h1.5a.5.5 0 0 1 0 1H13v1h.5a1.5 1.5 0 0 1 1.5 1.5v.5a.5.5 0 1 1-1 0v-.5a.5.5 0 0 0-.5-.5H13a5 5 0 0 1-10 0h-.5a.5.5 0 0 0-.5.5v.5a.5.5 0 1 1-1 0v-.5A1.5 1.5 0 0 1 2.5 10H3V9H1.5a.5.5 0 0 1 0-1H3V7h-.5A1.5 1.5 0 0 1 1 5.5V5a.5.5 0 0 1 1 0v.5a.5.5 0 0 0 .5.5H3c0-1.364.547-2.601 1.432-3.503l-.41-1.352a.5.5 0 0 1 .333-.623zM4 7v4a4 4 0 0 0 3.5 3.97V7H4zm4.5 0v7.97A4 4 0 0 0 12 11V7H8.5zM12 6a3.989 3.989 0 0 0-1.334-2.982A3.983 3.983 0 0 0 8 2a3.983 3.983 0 0 0-2.667 1.018A3.989 3.989 0 0 0 4 6h8z"/>
+                            </svg>
+                            <label>Corrigir Bugs</label>
+                        </li>
+                        <li class="list-group-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-database-check" viewBox="0 0 16 16">
+                                <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm1.679-4.493-1.335 2.226a.75.75 0 0 1-1.174.144l-.774-.773a.5.5 0 0 1 .708-.708l.547.548 1.17-1.951a.5.5 0 1 1 .858.514Z"/>
+                                <path d="M12.096 6.223A4.92 4.92 0 0 0 13 5.698V7c0 .289-.213.654-.753 1.007a4.493 4.493 0 0 1 1.753.25V4c0-1.007-.875-1.755-1.904-2.223C11.022 1.289 9.573 1 8 1s-3.022.289-4.096.777C2.875 2.245 2 2.993 2 4v9c0 1.007.875 1.755 1.904 2.223C4.978 15.71 6.427 16 8 16c.536 0 1.058-.034 1.555-.097a4.525 4.525 0 0 1-.813-.927C8.5 14.992 8.252 15 8 15c-1.464 0-2.766-.27-3.682-.687C3.356 13.875 3 13.373 3 13v-1.302c.271.202.58.378.904.525C4.978 12.71 6.427 13 8 13h.027a4.552 4.552 0 0 1 0-1H8c-1.464 0-2.766-.27-3.682-.687C3.356 10.875 3 10.373 3 10V8.698c.271.202.58.378.904.525C4.978 9.71 6.427 10 8 10c.262 0 .52-.008.774-.024a4.525 4.525 0 0 1 1.102-1.132C9.298 8.944 8.666 9 8 9c-1.464 0-2.766-.27-3.682-.687C3.356 7.875 3 7.373 3 7V5.698c.271.202.58.378.904.525C4.978 6.711 6.427 7 8 7s3.022-.289 4.096-.777ZM3 4c0-.374.356-.875 1.318-1.313C5.234 2.271 6.536 2 8 2s2.766.27 3.682.687C12.644 3.125 13 3.627 13 4c0 .374-.356.875-1.318 1.313C10.766 5.729 9.464 6 8 6s-2.766-.27-3.682-.687C3.356 4.875 3 4.373 3 4Z"/>
+                            </svg>
+                            <label>Ligar Banco de Dados</label>
+                        </li>
+                    </ol>
+                </div>
+             
+                <div class="col-sx-12 col-sm-6">
+                    <h3><b>Lista de Compras:</b></h3>
+    
+                    <ul id="listaCompras" class="list-group">
+                        <li class="list-group-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-device-ssd" viewBox="0 0 16 16">
+                                <path d="M4.75 4a.75.75 0 0 0-.75.75v3.5c0 .414.336.75.75.75h6.5a.75.75 0 0 0 .75-.75v-3.5a.75.75 0 0 0-.75-.75h-6.5ZM5 8V5h6v3H5Zm0-5.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0Zm7 0a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0ZM4.5 11a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1Zm7 0a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1Z"/>
+                                <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2Zm11 12V2a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1v-2a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2a1 1 0 0 0 1-1Zm-7.25 1v-2H5v2h.75Zm1.75 0v-2h-.75v2h.75Zm1.75 0v-2H8.5v2h.75ZM11 13h-.75v2H11v-2Z"/>
+                            </svg>
+                            <label>SDD</label>
+                        </li>
+                        <li class="list-group-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-device-hdd" viewBox="0 0 16 16">
+                                <path d="M12 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0Zm0 11a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0Zm-7.5.5a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1ZM5 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0ZM8 8a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z"/>
+                                <path d="M12 7a4 4 0 0 1-3.937 4c-.537.813-1.02 1.515-1.181 1.677a1.102 1.102 0 0 1-1.56-1.559c.1-.098.396-.314.795-.588A4 4 0 0 1 8 3a4 4 0 0 1 4 4Zm-1 0a3 3 0 1 0-3.891 2.865c.667-.44 1.396-.91 1.955-1.268.224-.144.483.115.34.34l-.62.96A3.001 3.001 0 0 0 11 7Z"/>
+                                <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2Zm2-1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H4Z"/>
+                            </svg>
+                            <label>HDD</label>
+                        </li>
+                        <li class="list-group-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-tv" viewBox="0 0 16 16">
+                                <path d="M2.5 13.5A.5.5 0 0 1 3 13h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zM13.991 3l.024.001a1.46 1.46 0 0 1 .538.143.757.757 0 0 1 .302.254c.067.1.145.277.145.602v5.991l-.001.024a1.464 1.464 0 0 1-.143.538.758.758 0 0 1-.254.302c-.1.067-.277.145-.602.145H2.009l-.024-.001a1.464 1.464 0 0 1-.538-.143.758.758 0 0 1-.302-.254C1.078 10.502 1 10.325 1 10V4.009l.001-.024a1.46 1.46 0 0 1 .143-.538.758.758 0 0 1 .254-.302C1.498 3.078 1.675 3 2 3h11.991zM14 2H2C0 2 0 4 0 4v6c0 2 2 2 2 2h12c2 0 2-2 2-2V4c0-2-2-2-2-2z"/>
+                            </svg>
+                            <label>Monitor</label>
+                        </li>
+                    </ul>
+                </div>     
+            </div>
+        </main>
+
+        <footer>
+            <nav class="navbar navbar-expand-lg bg-body-tertiary bg-dark f-bottom text-light" data-bs-theme="dark">
+                <pre class="ps-2 m-0"> © Leonardo Valadão™ - Todos os direitos reservados.
+ Quaisquer dúvidas ligar para (00) 00000-0000.</pre>
+            </nav>
+        </footer>
+
+        <div id="modalFormulario" class="modal fade">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content overflow-scroll">
+                    <div class="modal-header text-center">
+                        <h3>Formulário:</h3>
+
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <div class="modal-body">
+                        <div id="divFormulario">
+                            <form action="" id="formularioDaPesoa" class="w-100">
+                                <p>Preencha o formulário com os dados da pessoa e verifique-os antes de salvar:</p>
+
+                                <div class="row g-3">
+                                    <div class="col-sm-12 col-md-6 col-lg-3">
+                                        <label for="codigo" id="labelCodigo">Código: <span class="text-danger">*</span></label>
+                                        <input type="number" id="codigo" class="form-control" placeholder="Digite o código..."/>
+                                    </div>
+
+                                    <div class="col-sm-12 col-md-6 col-lg-3">
+                                        <label for="nome" id="labelNome">Nome: <span class="text-danger">*</span></label>
+                                        <input type="text" id="nome" class="form-control" placeholder="Digite o nome..."/>
+                                    </div>
+
+                                    <div class="col-sm-12 col-md-6 col-lg-3">
+                                        <label for="dataDeNascimento" id="labelDataDeNascimento">Data de Nascimento: <span class="text-danger">*</span></label>
+                                        <input type="date" id="dataDeNascimento" class="form-control" placeholder="Digite a data de nascimento...">
+                                    </div>
+
+                                    <div class="col-sm-12 col-md-6 col-lg-3">
+                                        <label for="cpf" id="labelCPF">CPF: <span class="text-danger">*</span></label>
+                                        <input type="text" id="cpf" class="form-control" placeholder="Digite o CPF..." />
+                                    </div>
+
+                                    <div class="col-sm-12 col-md-6 col-lg-3">
+                                        <label for="tipoDePessoa" id="labelTipoDePessoa">Tipo de Pessoa: <span class="text-danger">*</span></label>
+                                        <select name="tipoDePessoa" class="form-select" id="selectTipoDePessoa" aria-placeholder="Selecione o tipo de pessoa...">
+                                            <option value="pessoaFisica">Pessoa Física</option>
+                                            <option value="pessoaJuridica">Pessoa Jurídica</option>
+                                            <option value="especial">Especial</option>
+                                            <option value="outros">Outros</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-sm-12 col-md-6 col-lg-3">
+                                        <label for="sexo" id="labelSexo">Sexo:</label>
+                                        <div id="divOpcoesDeSexo" class="d-flex flex-row gap-3">
+                                            <div id="divSexoMasculino">
+                                                <input type="radio" class="form-check-input" name="sexo" value="masculino"/>
+                                                <label for="sexo">Masculino</label>
+                                            </div>
+                                            
+                                            <div id="divSexoFeminino">
+                                                <input type="radio" class="form-check-input" name="sexo" value="feminino"/>
+                                                <label for="sexo">Feminino</label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-12 col-md-6 col-lg-3">
+                                        <label for="altura" id="labelAltura">Altura:</label>
+                                        <input type="number" id="altura" class="form-control" placeholder="Digite a altura..."/>
+                                    </div>
+
+                                    <div class="col-sm-12 col-md-6 col-lg-3">
+                                        <label for="peso" id="labelPeso">Peso:</label>
+                                        <input type="number" id="peso" class="form-control" placeholder="Digite o peso..."/>
+                                    </div>
+
+                                    <div class="col-sm-12 col-md-6 col-lg-3 d-flex flex-row gap-2">
+                                        <input type="checkbox" id="portadorDeNecessidadesEspeciais" class="form-check">
+                                        <label for="portadorDeNecessidadesEspeciais" id="labelPortadorDeNecessidadesEspeciais">Portador de Necessidades Especiais?</label>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Salvar</button>
+
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
