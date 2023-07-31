@@ -264,73 +264,71 @@
                     </div>
 
                     <div class="modal-body">
-                        <div id="divFormulario">
-                            <form action="" id="formularioDaPesoa" class="w-100">
-                                <p>Preencha o formulário com os dados da pessoa e verifique-os antes de salvar:</p>
+                        <form action="" class="row">
+                            <p>Preencha o formulário com os dados da pessoa e verifique-os antes de salvar:</p>
 
-                                <div class="row g-3">
-                                    <div class="col-sm-12 col-md-6 col-lg-3">
-                                        <label for="codigo" id="labelCodigo">Código: <span class="text-danger">*</span></label>
-                                        <input type="number" id="codigo" class="form-control" placeholder="Digite o código..."/>
+                            <div class="form-group col-sm-12 col-md-6 col-lg-3">
+                                <label for="codigo" id="labelCodigo" class="col-form-label">Código: <span class="text-danger">*</span></label>
+                                <input type="number" id="codigo" class="form-control" placeholder="Digite o código..."/>
+                            </div>
+
+                            <div class="form-group col-sm-12 col-md-6 col-lg-3">
+                                <label for="nome" id="labelNome" class="col-form-label">Nome: <span class="text-danger">*</span></label>
+                                <input type="text" id="nome" class="form-control" placeholder="Digite o nome..."/>
+                            </div>   
+
+                            <div class="form-group col-sm-12 col-md-6 col-lg-3">
+                                <label for="dataDeNascimento" id="labelDataDeNascimento" class="col-form-label">Data de Nascimento: <span class="text-danger">*</span></label>
+                                <input type="date" id="dataDeNascimento" class="form-control" placeholder="Digite a data de nascimento...">
+                            </div>   
+
+                            <div class="form-group col-sm-12 col-md-6 col-lg-3">
+                                <label for="cpf" id="labelCPF" class="col-form-label">CPF: <span class="text-danger">*</span></label>
+                                <input type="text" id="cpf" class="form-control" placeholder="Digite o CPF..." />
+                            </div>   
+
+                            <div class="form-group col-sm-12 col-md-6 col-lg-3">
+                                <label for="tipoDePessoa" id="labelTipoDePessoa" class="col-form-label">Tipo de Pessoa: <span class="text-danger">*</span></label>
+                                <select name="tipoDePessoa" class="form-select" id="selectTipoDePessoa" aria-placeholder="Selecione o tipo de pessoa...">
+                                    <option value="pessoaFisica">Pessoa Física</option>
+                                    <option value="pessoaJuridica">Pessoa Jurídica</option>
+                                    <option value="especial">Especial</option>
+                                    <option value="outros">Outros</option>
+                                </select>
+                            </div>   
+
+                            <div class="form-group col-sm-12 col-md-6 col-lg-3">
+                                <label for="sexo" id="labelSexo" class="col-form-label">Sexo:</label>
+                                <div id="divOpcoesDeSexo" class="d-flex flex-row gap-3 justify-content-evenly">
+                                    <div id="divSexoMasculino">
+                                        <input type="radio" class="form-check-input" name="sexo" value="masculino" id="sexoMasculino"/>
+                                        <label for="sexoMasculino">Masculino</label>
                                     </div>
-
-                                    <div class="col-sm-12 col-md-6 col-lg-3">
-                                        <label for="nome" id="labelNome">Nome: <span class="text-danger">*</span></label>
-                                        <input type="text" id="nome" class="form-control" placeholder="Digite o nome..."/>
-                                    </div>
-
-                                    <div class="col-sm-12 col-md-6 col-lg-3">
-                                        <label for="dataDeNascimento" id="labelDataDeNascimento">Data de Nascimento: <span class="text-danger">*</span></label>
-                                        <input type="date" id="dataDeNascimento" class="form-control" placeholder="Digite a data de nascimento...">
-                                    </div>
-
-                                    <div class="col-sm-12 col-md-6 col-lg-3">
-                                        <label for="cpf" id="labelCPF">CPF: <span class="text-danger">*</span></label>
-                                        <input type="text" id="cpf" class="form-control" placeholder="Digite o CPF..." />
-                                    </div>
-
-                                    <div class="col-sm-12 col-md-6 col-lg-3">
-                                        <label for="tipoDePessoa" id="labelTipoDePessoa">Tipo de Pessoa: <span class="text-danger">*</span></label>
-                                        <select name="tipoDePessoa" class="form-select" id="selectTipoDePessoa" aria-placeholder="Selecione o tipo de pessoa...">
-                                            <option value="pessoaFisica">Pessoa Física</option>
-                                            <option value="pessoaJuridica">Pessoa Jurídica</option>
-                                            <option value="especial">Especial</option>
-                                            <option value="outros">Outros</option>
-                                        </select>
-                                    </div>
-
-                                    <div class="col-sm-12 col-md-6 col-lg-3">
-                                        <label for="sexo" id="labelSexo">Sexo:</label>
-                                        <div id="divOpcoesDeSexo" class="d-flex flex-row gap-3">
-                                            <div id="divSexoMasculino">
-                                                <input type="radio" class="form-check-input" name="sexo" value="masculino"/>
-                                                <label for="sexo">Masculino</label>
-                                            </div>
-                                            
-                                            <div id="divSexoFeminino">
-                                                <input type="radio" class="form-check-input" name="sexo" value="feminino"/>
-                                                <label for="sexo">Feminino</label>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-sm-12 col-md-6 col-lg-3">
-                                        <label for="altura" id="labelAltura">Altura:</label>
-                                        <input type="number" id="altura" class="form-control" placeholder="Digite a altura..."/>
-                                    </div>
-
-                                    <div class="col-sm-12 col-md-6 col-lg-3">
-                                        <label for="peso" id="labelPeso">Peso:</label>
-                                        <input type="number" id="peso" class="form-control" placeholder="Digite o peso..."/>
-                                    </div>
-
-                                    <div class="col-sm-12 col-md-6 col-lg-3 d-flex flex-row gap-2">
-                                        <input type="checkbox" id="portadorDeNecessidadesEspeciais" class="form-check">
-                                        <label for="portadorDeNecessidadesEspeciais" id="labelPortadorDeNecessidadesEspeciais">Portador de Necessidades Especiais?</label>
+                                    
+                                    <div id="divSexoFeminino">
+                                        <input type="radio" class="form-check-input" name="sexo" value="feminino" id="sexoFeminino"/>
+                                        <label for="sexoFeminino">Feminino</label>
                                     </div>
                                 </div>
-                            </form>
-                        </div>
+                            </div>
+
+                            <div class="form-group col-sm-12 col-md-6 col-lg-3">
+                                <label for="altura" id="labelAltura" class="col-form-label">Altura:</label>
+                                <input type="number" id="altura" class="form-control" placeholder="Digite a altura..."/>
+                            </div>
+
+                            <div class="form-group col-sm-12 col-md-6 col-lg-3">
+                                <label for="peso" id="labelPeso" class="col-form-label">Peso:</label>
+                                <input type="number" id="peso" class="form-control" placeholder="Digite o peso..."/>
+                            </div>
+
+                            <div class="form-group col-sm-12 col-md-6 col-lg-3">
+                                <div class="d-flex flex-row gap-2 align-items-center">
+                                    <input type="checkbox" id="portadorDeNecessidadesEspeciais" class="form-check-input">
+                                    <label for="portadorDeNecessidadesEspeciais" id="labelPortadorDeNecessidadesEspeciais" class="form-check-label">Portador de Necessidades Especiais?</label>
+                                </div>
+                            </div>
+                        </form>
                     </div>
 
                     <div class="modal-footer">
