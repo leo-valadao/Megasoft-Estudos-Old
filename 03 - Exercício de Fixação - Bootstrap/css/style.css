@@ -35,21 +35,12 @@ td, th, tr {
     vertical-align: middle;
 }
 
-.divInputsFormularios {
-    display: flex;
-    flex-direction: column;
-    align-self: center;
-}
-
-.divCheckbox {
-    display: flex;
-    flex-direction: row;
-    align-self: center;
-
-    gap: 10px;
-}
-
 .modal-dialog {
     min-width: 80%;
     margin: auto;
+}
+
+#portadorDeNecessidadesEspeciais {
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
