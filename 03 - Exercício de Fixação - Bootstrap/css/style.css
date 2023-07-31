@@ -53,28 +53,3 @@ td, th, tr {
     min-width: 80%;
     margin: auto;
 }
-
-/* @media screen and (min-width: 1360px) {
-    .malha {
-        display: grid;
-        grid-template-columns: 25% 25% 25% 25%;
-        grid-template-rows: 80px 80px 80px;
-        column-gap: 10px;
-    }
-}
-
-@media screen and (min-width:799px) and (max-width: 1360px) {
-    .malha {
-        display: grid;
-        grid-template-columns: 50% 50%;
-        grid-template-rows: 80px 80px 80px;
-    }    
-}
-
-@media screen and (max-width: 799px) {
-    .malha {
-        display: grid;
-        grid-template-columns: 100%;
-        grid-template-rows: 80px;
-    }    
-} */
