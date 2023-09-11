@@ -25,6 +25,19 @@ public class SecurityConfig {
     private UserService userService;
 
     @Bean
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+        return http
+                .authorizeHttpRequests(auth -> auth
+                        .requestMatchers("/anime/*").authenticated()
+                        .anyRequest().permitAll())
+                .formLogin(Customizer.withDefaults())
+                .csrf().disable()
+                // .rememberMe(Customizer.withDefaults())
+                .build();
+
+    }
+
+    @Bean
     public UserDetailsService userDetailsService() {
         // UserDetails admin =
         // User.withUsername("admin").password(encoder.encode("123")).roles("ADMIN").build();
@@ -39,20 +52,6 @@ public class SecurityConfig {
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
-    }
-
-    @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        return http
-                .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/anime/*").authenticated()
-                        .requestMatchers("**").permitAll()
-                        .anyRequest().permitAll())
-                .formLogin(Customizer.withDefaults())
-                .csrf().disable()
-                // .rememberMe(Customizer.withDefaults())
-                .build();
-
     }
 
     @Bean
