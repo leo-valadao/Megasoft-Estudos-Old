@@ -3,17 +3,12 @@ package com.leonardovaladao.spring.services;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.leonardovaladao.spring.domains.Anime;
-import com.leonardovaladao.spring.repositories.AnimeRepository;
 
 @Service
 public class AnimeService {
-
-    @Autowired
-    private AnimeRepository repository;
 
     private static List<Anime> animes;
     static {
@@ -44,7 +39,8 @@ public class AnimeService {
     }
 
     public Anime updateAnime(Anime anime) {
-        Anime animeAntigo = animes.parallelStream().filter(animeDaLista -> animeDaLista.getId() == anime.getId()).findFirst().get();
+        Anime animeAntigo = animes.parallelStream().filter(animeDaLista -> animeDaLista.getId() == anime.getId())
+                .findFirst().get();
 
         animes.set(animes.indexOf(animeAntigo), anime);
 
