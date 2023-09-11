@@ -12,6 +12,8 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
+import org.springframework.security.web.csrf.CsrfTokenRequestAttributeHandler;
 import org.springframework.stereotype.Component;
 
 import com.leonardovaladao.spring.services.UserService;
@@ -31,10 +33,11 @@ public class SecurityConfig {
                         .requestMatchers("/anime/*").authenticated()
                         .anyRequest().permitAll())
                 .formLogin(Customizer.withDefaults())
-                .csrf().disable()
+                .csrf(csrf -> csrf
+                        .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
+                        .csrfTokenRequestHandler(new CsrfTokenRequestAttributeHandler()))
                 // .rememberMe(Customizer.withDefaults())
                 .build();
-
     }
 
     @Bean
