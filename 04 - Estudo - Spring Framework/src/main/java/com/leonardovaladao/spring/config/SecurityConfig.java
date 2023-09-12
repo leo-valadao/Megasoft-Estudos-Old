@@ -2,6 +2,7 @@ package com.leonardovaladao.spring.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.Customizer;
@@ -30,12 +31,17 @@ public class SecurityConfig {
     private SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/anime/*").authenticated()
+                        .requestMatchers(HttpMethod.GET, "/anime/*").authenticated()
+                        .requestMatchers(HttpMethod.POST).permitAll()
                         .anyRequest().permitAll())
-                .formLogin(Customizer.withDefaults())
+                // .formLogin(Customizer.withDefaults())
+                .formLogin(login -> login.disable())
                 .csrf(csrf -> csrf
                         .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
                         .csrfTokenRequestHandler(new CsrfTokenRequestAttributeHandler()))
+                // .csrf(csrf -> csrf.disable())
+                .cors(cors -> cors.disable())
+                .httpBasic(Customizer.withDefaults())
                 // .rememberMe(Customizer.withDefaults())
                 .build();
     }
